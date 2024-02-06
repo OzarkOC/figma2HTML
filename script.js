@@ -31,6 +31,7 @@ export function displayFigmaData(figmaData) {
   document.addEventListener("DOMContentLoaded", async function () {
     try {
       // Further actions can be performed here after the API call is completed
+      console.log(figmaData);
       processData(figmaData);
     } catch (error) {
       console.error("Error during API call:", error);
