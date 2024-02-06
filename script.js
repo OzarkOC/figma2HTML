@@ -1,30 +1,5 @@
 "use strict";
 
-// export async function fetchData(figmaId, figmaApiKey) {
-//   const requestOptions = {
-//     method: "GET",
-//     headers: {
-//       "X-Figma-Token": figmaApiKey,
-//     },
-//   };
-
-//   try {
-//     const response = await fetch(
-//       `https://api.figma.com/v1/files/${figmaId}`,
-//       requestOptions
-//     );
-
-//     if (!response.ok) {
-//       throw new Error(`API request failed with status ${response.status}`);
-//     }
-
-//     const result = await response.json();
-//     return result;
-//   } catch (error) {
-//     console.error("Error during API call:", error);
-//     throw error; // Re-throw the error to be caught by the outer try-catch block
-//   }
-// }
 export async function fetchData(figmaId, figmaApiKey) {
   try {
     const response = await fetch(
@@ -51,16 +26,17 @@ export async function fetchData(figmaId, figmaApiKey) {
 
 export function displayFigmaData(figmaData) {
   console.log("Displaying Figma Data");
-  document.addEventListener("DOMContentLoaded", async function () {
-    try {
-      // Further actions can be performed here after the API call is completed
-      console.log(figmaData);
-      processData(figmaData);
-    } catch (error) {
-      console.error("Error during API call:", error);
-    }
-  });
+
+  // Remove the DOMContentLoaded event listener
+  try {
+    // Further actions can be performed here after the API call is completed
+    console.log(figmaData);
+    processData(figmaData);
+  } catch (error) {
+    console.error("Error during API call:", error);
+  }
 }
+
 let pages;
 let frames = [];
 function processData(data) {
