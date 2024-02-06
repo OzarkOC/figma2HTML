@@ -1,26 +1,6 @@
 "use strict";
 
-const myHeaders = new Headers();
-myHeaders.append("X-Figma-Token", figmaApiKey);
-
-const requestOptions = {
-  method: "GET",
-  headers: myHeaders,
-  redirect: "follow",
-};
-document.addEventListener("DOMContentLoaded", async function () {
-  try {
-    // Call the fetchData function with the desired figmaId
-    const resultData = await fetchData(figmaId);
-
-    // Further actions can be performed here after the API call is completed
-    processData(resultData);
-  } catch (error) {
-    console.error("Error during API call:", error);
-  }
-});
-
-async function fetchData(figmaId) {
+export async function fetchData(figmaId, figmaApiKey) {
   const requestOptions = {
     method: "GET",
     headers: {
@@ -44,6 +24,17 @@ async function fetchData(figmaId) {
     console.error("Error during API call:", error);
     throw error; // Re-throw the error to be caught by the outer try-catch block
   }
+}
+
+export function displayFigmaData(figmaData) {
+  document.addEventListener("DOMContentLoaded", async function () {
+    try {
+      // Further actions can be performed here after the API call is completed
+      processData(figmaData);
+    } catch (error) {
+      console.error("Error during API call:", error);
+    }
+  });
 }
 let pages;
 let frames = [];
