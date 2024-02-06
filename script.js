@@ -1,8 +1,5 @@
 "use strict";
 
-// const figmaApiKey = "figd_TiGxiV-BRRykpl7qml0ENruBTjLibEaHD4kz1JNx";
-// const figmaId = "YyC8tdOFAruDnanTCp1qKN";
-
 const myHeaders = new Headers();
 myHeaders.append("X-Figma-Token", figmaApiKey);
 
