@@ -1,4 +1,5 @@
-Description:
+<H1>FIGMA ATTRIBUTES to HTML</H1>
+<h3>Description:</H3>
 Use your figma API and ID to generate in your HTML the figma file, add attributes to the names of the items ( [attribute] )
 to differenciate what object is what (See accepted attributes)
 <H3>How to make a Figma API Key</H3>
