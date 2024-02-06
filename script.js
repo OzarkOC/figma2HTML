@@ -1,17 +1,40 @@
 "use strict";
 
-export async function fetchData(figmaId, figmaApiKey) {
-  const requestOptions = {
-    method: "GET",
-    headers: {
-      "X-Figma-Token": figmaApiKey,
-    },
-  };
+// export async function fetchData(figmaId, figmaApiKey) {
+//   const requestOptions = {
+//     method: "GET",
+//     headers: {
+//       "X-Figma-Token": figmaApiKey,
+//     },
+//   };
 
+//   try {
+//     const response = await fetch(
+//       `https://api.figma.com/v1/files/${figmaId}`,
+//       requestOptions
+//     );
+
+//     if (!response.ok) {
+//       throw new Error(`API request failed with status ${response.status}`);
+//     }
+
+//     const result = await response.json();
+//     return result;
+//   } catch (error) {
+//     console.error("Error during API call:", error);
+//     throw error; // Re-throw the error to be caught by the outer try-catch block
+//   }
+// }
+export async function fetchData(figmaId, figmaApiKey) {
   try {
     const response = await fetch(
       `https://api.figma.com/v1/files/${figmaId}`,
-      requestOptions
+      {
+        method: "GET",
+        headers: {
+          "X-Figma-Token": figmaApiKey,
+        },
+      }
     );
 
     if (!response.ok) {
@@ -22,7 +45,7 @@ export async function fetchData(figmaId, figmaApiKey) {
     return result;
   } catch (error) {
     console.error("Error during API call:", error);
-    throw error; // Re-throw the error to be caught by the outer try-catch block
+    throw error;
   }
 }
 
