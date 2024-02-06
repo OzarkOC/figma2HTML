@@ -25,11 +25,9 @@ export async function fetchData(figmaId, figmaApiKey) {
 }
 
 export function displayFigmaData(figmaData) {
-  console.log("Displaying Figma Data");
   // Remove the DOMContentLoaded event listener
   try {
     // Further actions can be performed here after the API call is completed
-    console.log(figmaData);
     processData(figmaData);
   } catch (error) {
     console.error("Error during API call:", error);

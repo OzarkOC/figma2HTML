@@ -9,11 +9,13 @@ to differenciate what object is what (See accepted attributes)
 <H3>Add to your HTML to pull from your figma account and file:</H3>
 Add to header:
 <code>
-  <script type="module">
-      import {
-        fetchData,
-        displayFigmaData,
-      } from "https://cdn.jsdelivr.net/gh/OzarkOC/figma2HTML@v1.0.9/script.js";
+
+    <script type="module">
+
+        import {
+          fetchData,
+          displayFigmaData,
+        } from "https://cdn.jsdelivr.net/gh/OzarkOC/figma2HTML/script.js";
 
       // Provide your API key and Figma ID
       const figmaApiKey = "Your_API_KEY";
@@ -31,6 +33,7 @@ Add to header:
         }
       })();
     </script>   
+
 </code>
 
 <H3>Attributes:</H3>
